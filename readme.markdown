@@ -1,9 +1,9 @@
-# JSON-logic-condition-prepared-statement
+# JSON-and-or-prep
 
 # example
 
 ``` js
-var andor = require('JSON-logic-condition-prepared-statement')
+var andor = require('JSON-and-or-prep')
 
 var cond = {or:[{one:1},{two:2}],fun:'yes'}
 
@@ -19,7 +19,7 @@ Object {condition: "((one = ? OR two = ?) AND fun = ?)", params: [1,2,"yes"]}
 # install
 
 ```
-npm install JSON-logic-condition-prepared-statement
+npm install JSON-and-or-prep
 ```
 
 # license
