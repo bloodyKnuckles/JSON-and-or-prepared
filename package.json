@@ -1,0 +1,32 @@
+{
+  "name": "JSON-logic-condition-prepared-statement",
+  "version": "1.0.0",
+  "description": "Represent a conditional statement as a JSON object and convert it to a SQL ready prepared statement",
+  "main": "index.js",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "^4.2.1"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bloodyKnuckles/JSON-logic-condition-prepared-statement.git" },
+  "keywords": [
+    "JSON",
+    "logic",
+    "condition",
+    "prepared statements"
+  ],
+  "author": "bloodyKnuckles",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bloodyKnuckles/JSON-logic-condition-prepared-statement/issues"
+  },
+  "homepage": "https://github.com/bloodyKnuckles/JSON-logic-condition-prepared-statement#readme"
+}
