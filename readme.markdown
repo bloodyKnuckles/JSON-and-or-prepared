@@ -3,7 +3,7 @@
 Use a JSON object to represent a logical conditional statement and convert that
 to a SQL ready prepared statement string along with an array of corresponding values.
 
-
+------------ 
 ## example
 
 ``` js
