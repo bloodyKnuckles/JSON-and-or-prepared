@@ -9,4 +9,3 @@ test('and or', function (tt) {
 
     tt.deepEqual(andor(cond), res)
 })
-
