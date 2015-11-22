@@ -1,19 +1,35 @@
 module.exports = andor
 
 function andor(obj) {
-    var looparr  = obj.or && 1 === Object.keys(obj).length? obj.or: Object.keys(obj)
-    var jointype = obj.or && 1 === Object.keys(obj).length? ' OR ': ' AND '
     var retarr = [], retparams = []
+    var looparr, jointype
+    if ( obj.or && 1 === Object.keys(obj).length ) {
+        looparr  = obj.or
+        jointype = ' OR '
+    }
+    else {
+        looparr  = Object.keys(obj)
+        jointype = ' AND '
+    }
+
     looparr.forEach(function (elem) {
-        var key       = 'string' === typeof elem? elem: Object.keys(elem)[0]
-        var andorsobj = 'string' === typeof elem? obj: elem
+        var key, andorsobj
+        if ( 'string' === typeof elem ) {
+            key = elem
+            andorsobj = obj
+        }
+        else {
+            key = Object.keys(elem)[0]
+            andorsobj = elem
+        }
         if ('or' === key || (' OR ' === jointype && 1 < Object.keys(elem).length)) {
             if ('or' === key) {
                 andorsobj = {or: obj[key]}
             }
             var andorret = andor(andorsobj)
-            retarr.push(andorret[0])
-            retparams = retparams.concat(andorret[1])
+            console.log(andorret)
+            retarr.push(andorret.condition)
+            retparams = retparams.concat(andorret.params)
         }
         else if (Array.isArray(andorsobj[key])) {
             retarr.push(key + ' IN (' + andorsobj[key].map(function () {
