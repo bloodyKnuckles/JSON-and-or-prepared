@@ -1,6 +1,6 @@
 module.exports = andor
 
-function andor(obj) {
+function andor (obj) {
     var retarr = [], retparams = []
     var looparr, jointype
     if ( obj.or && 1 === Object.keys(obj).length ) {
