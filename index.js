@@ -27,7 +27,6 @@ function andor(obj) {
                 andorsobj = {or: obj[key]}
             }
             var andorret = andor(andorsobj)
-            console.log(andorret)
             retarr.push(andorret.condition)
             retparams = retparams.concat(andorret.params)
         }
