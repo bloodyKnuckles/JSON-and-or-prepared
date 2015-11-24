@@ -1,6 +1,6 @@
 {
   "name": "json-and-or-prepared",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Represent a conditional statement as a JSON object and convert it to a SQL ready prepared statement",
   "main": "index.js",
   "directories": {
@@ -16,7 +16,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/bloodyKnuckles/json-and-or-prepared.git" },
+    "url": "git://github.com/bloodyKnuckles/json-and-or-prepared.git"
+  },
   "keywords": [
     "JSON",
     "logic",
