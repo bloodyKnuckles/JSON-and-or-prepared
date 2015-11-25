@@ -1,7 +1,7 @@
 module.exports = andor
 
 function andor (obj) {
-    var retarr = [], retparams = []
+    var retcond = [], retparams = []
     var looparr, jointype
     if ( obj.or && 1 === Object.keys(obj).length ) {
         looparr  = obj.or
@@ -27,20 +27,20 @@ function andor (obj) {
                 andorsobj = {or: obj[key]}
             }
             var andorret = andor(andorsobj)
-            retarr.push(andorret.condition)
+            retcond.push(andorret.condition)
             retparams = retparams.concat(andorret.params)
         }
         else if (Array.isArray(andorsobj[key])) {
-            retarr.push(key + ' IN (' + andorsobj[key].map(function () {
+            retcond.push(key + ' IN (' + andorsobj[key].map(function () {
                 return '?'
             }).join(',') + ')')
             retparams = retparams.concat(andorsobj[key])
         }
         else {
-            retarr.push(key + ' = ?')
+            retcond.push(key + ' = ?')
             retparams.push(andorsobj[key])
         }
     })
-    return {condition:'(' + retarr.join(jointype) + ')', params:retparams}
+    return {condition:'(' + retcond.join(jointype) + ')', params:retparams}
 }
 
